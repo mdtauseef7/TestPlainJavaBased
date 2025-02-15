@@ -85,7 +85,8 @@ public class Genz {
                 .entrySet()
                 .stream()
                 .filter(stringLongEntry -> stringLongEntry.getValue() > 1)
-                .map(Map.Entry::getKey).toList();
+                .map(Map.Entry::getKey)
+                .toList();
 
         //System.out.println(list3);
 
@@ -101,7 +102,21 @@ public class Genz {
 
         IntSummaryStatistics stats = numbers.stream() .mapToInt(Integer::intValue) .summaryStatistics();
 
-        System.out.println(stats);
+        //System.out.println(stats);
+
+        List<Integer> intList1 = Arrays.asList(24,5,5,4,3,1);
+
+
+        List<List<Integer>> cilitiesList = Arrays.asList(intList1);
+
+        //System.out.println(cilitiesList);
+
+        int sum = cilitiesList.stream()
+                .flatMap(Collection::stream)
+                .mapToInt(Integer::valueOf)
+                .sum();
+
+        System.out.println(sum);
 
 
     }

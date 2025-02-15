@@ -2,7 +2,7 @@ CREATE SCHEMA gfgmicroservicesdemo
 --
 
  --
- ALTER TABLE gfgmicroservicesdemo.employee
+ALTER TABLE gfgmicroservicesdemo.employee
 ADD PRIMARY KEY (id);
  --
  INSERT INTO gfgmicroservicesdemo.employee(id,name,email,age) values (1,'Tauseef','tauseef@example.com',35);
