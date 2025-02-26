@@ -1,4 +1,4 @@
-package com.practic.common;
+package com.practic.marshellingdemarshelling.json;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
