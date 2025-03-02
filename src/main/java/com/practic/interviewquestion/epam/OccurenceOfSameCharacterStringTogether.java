@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class OccurenceOfSameCharacterStringTogether {
     public static void main(String[] args) {
@@ -16,14 +17,12 @@ public class OccurenceOfSameCharacterStringTogether {
 
         // Stream.of(arr).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 
-        Map<String, Double> mapWithAscii = new HashMap<>();
-        Arrays.stream(arr).forEach(a -> {
-            double asci = Arrays.stream(a.split("")).map(cha -> (int) cha.toCharArray()[0]).reduce(0, (s1, s2) -> s1 + s2).doubleValue();
-            mapWithAscii.put(a, asci);
+        Map<String , Integer> wordSum = new HashMap<>();
+        Arrays.stream(arr).forEach(word ->{
+            Integer asciiSum = Stream.of(word.split("")).map(s -> (int) s.toCharArray()[0]).reduce(0, (integer, integer2) -> integer + integer2);
+            wordSum.put(word,asciiSum);
         });
-        Map<Double, List<String>> groupedBySameAsCIIValue = mapWithAscii.entrySet().stream().
-                collect(Collectors.groupingBy(Map.Entry::getValue, Collectors.mapping(Map.Entry::getKey, Collectors.toList())));
-
-        System.out.println("::::Answer::::::\n" + groupedBySameAsCIIValue.values());
+        wordSum.entrySet().stream().collect(Collectors.groupingBy(Map.Entry::getValue, Collectors.mapping(Map.Entry::getKey,  Collectors.toList())))
+                .entrySet().stream().map(Map.Entry::getValue).forEach(System.out::println);
     }
 }

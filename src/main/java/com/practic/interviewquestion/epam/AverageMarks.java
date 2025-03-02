@@ -6,10 +6,7 @@ subject with the highest average grade. How would you approach this task*/
 
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class AverageMarks {
@@ -38,16 +35,9 @@ public class AverageMarks {
         studentGrades.add(student3);
 
 
-        Map<String, Double> subjectAverage = studentGrades.stream()
-                // Flatten the student grades into individual subject-grade pairs
-                .flatMap(student -> student.getGrades().entrySet().stream())
-                // Group by subject
-                .collect(Collectors.groupingBy(
-                        Map.Entry::getKey, // Group by subject
-                        Collectors.averagingInt(Map.Entry::getValue) // Calculate average grade for each subject
-                ));
-
-
+        studentGrades.stream().flatMap(studentGrade -> studentGrade.grades.entrySet().stream())
+                .collect(Collectors.groupingBy(Map.Entry::getKey,Collectors.averagingDouble(Map.Entry::getValue)))
+                .entrySet().stream().mapToDouble(Map.Entry::getValue).max().ifPresent(System.out::println);
     }
 
 }
