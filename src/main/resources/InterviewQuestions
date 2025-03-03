@@ -1,0 +1,24 @@
+epam questions:
+===============
+1. Race Condition & how to avoid it?
+Ans - Updating same critical section/variable by two threads. Then value can be unpregdictable.
+  a> use lock(mutual execlusion) to fix the prob.
+  b>Atomic variable.
+  c>Avoid shared state.
+  d>Use read-write lock.
+
+2. @Transactional will work if method were get called from outside of class. if any inside methods call then Transactional feature will not get applied.
+3. Circular dependencies in beans without any parameter. So we can use @Lazy @Early initilization to avoid it circular dependencies.
+4. Solid principle
+5. Encapsulation in details. what are challenges, if we don't follow encapsulation.
+6. Callable to return value
+7. Java programme to update Address through PatchMapping.
+==============================================================================================
+Wellsfargo
+----------
+L1-round.
+1. Twitter snow flake id generator - Use timestamp to generate id.
+2. Processing 20 complex task object and 80 non complex task object, complex object can't get process together but non compplex can
+    - use semaphore to fix it.
+3. Write a java program to get min subArray which contains minimum and maximum ele.
+4. Cyclic barrier and Countdown latch in details.
