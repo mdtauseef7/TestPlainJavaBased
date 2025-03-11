@@ -1,7 +1,7 @@
 package com.practic.interviewquestion.epam;
 /*Given a list of `StudentGrade` objects containing each student's name and grades in various subjects,
 your objective is to determine the average grade for each subject across all students and identify the
-subject with the highest average grade. How would you approach this task*/
+the highest average grade among all subject. How would you approach this task*/
 
 
 
