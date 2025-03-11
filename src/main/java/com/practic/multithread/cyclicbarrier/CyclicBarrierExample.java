@@ -1,7 +1,5 @@
 package com.practic.multithread.cyclicbarrier;
 
-import com.practic.multithread.cyclicbarrier.Friend;
-
 import java.util.concurrent.CyclicBarrier;
 
 public class CyclicBarrierExample {

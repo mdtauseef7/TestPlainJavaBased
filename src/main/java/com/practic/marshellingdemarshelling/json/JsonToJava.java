@@ -42,5 +42,4 @@ class Employee {
 @ToString
 class EmployeeWrapper{
     private Employee employee;
-
 }

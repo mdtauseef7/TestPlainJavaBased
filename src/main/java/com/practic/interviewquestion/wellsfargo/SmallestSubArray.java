@@ -31,8 +31,5 @@ public class SmallestSubArray {
         System.out.println(minSubrray);
 
     }
-
-
-
     }
 }

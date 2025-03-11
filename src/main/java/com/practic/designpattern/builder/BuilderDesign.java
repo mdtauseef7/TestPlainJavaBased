@@ -10,8 +10,7 @@ public class BuilderDesign {
 
         //System.out.println(student);
 
-        Post post = new Post.Builder()
-                .title("Java Builder Pattern")
+        Post post = new Post.Builder("Java Builder Pattern")
                 .text("Explaining how to implement the Builder Pattern in Java")
                 .category("Programming")
                 .build();

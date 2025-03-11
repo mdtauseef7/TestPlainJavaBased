@@ -3,9 +3,7 @@ package com.practic.designpattern.builder;
 public class Post {
 
     private final String title;
-
     private final String text;
-
     private final String category;
 
     Post(Builder builder) {
@@ -28,9 +26,8 @@ public class Post {
         private String text;
         private String category;
 
-        public Builder title(String title) {
+        public Builder(String title) {
             this.title = title;
-            return this;
         }
 
         public Builder text(String text) {

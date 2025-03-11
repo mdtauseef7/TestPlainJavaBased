@@ -38,6 +38,11 @@ public class AverageMarks {
         studentGrades.stream().flatMap(studentGrade -> studentGrade.grades.entrySet().stream())
                 .collect(Collectors.groupingBy(Map.Entry::getKey,Collectors.averagingDouble(Map.Entry::getValue)))
                 .entrySet().stream().mapToDouble(Map.Entry::getValue).max().ifPresent(System.out::println);
+
+        studentGrades.stream().flatMap(studentGrade -> studentGrade.getGrades().entrySet().stream())
+                .collect(Collectors.groupingBy(Map.Entry::getKey,Collectors.averagingDouble(Map.Entry::getValue)))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).ifPresent(System.out::println);
+
     }
 
 }
