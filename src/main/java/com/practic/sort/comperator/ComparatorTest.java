@@ -19,13 +19,13 @@ public class ComparatorTest {
 
         System.out.println(studentList);
 
+        Collections.sort(studentList,new NameComparator());
 
-        Collections.sort(studentList,new RollNoComparator());
+        Collections.sort(studentList,(o1,o2) -> {
+            return Integer.compare(o1.getRollNo(),o2.getRollNo());
+        });
 
         System.out.println(studentList);
-
-
-
     }
 }
 
@@ -35,8 +35,6 @@ class RollNoComparator implements Comparator<Student>{
         return Integer.compare(o1.getRollNo(),o2.getRollNo());
     }
 }
-
-
 
 class NameComparator implements Comparator<Student>{
     @Override
@@ -55,7 +53,6 @@ class Student {
                 ", subject='" + subject + '\'' +
                 '}';
     }
-
     public String getName() {
         return name;
     }
