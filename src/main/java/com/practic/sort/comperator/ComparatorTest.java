@@ -19,8 +19,6 @@ public class ComparatorTest {
 
         System.out.println(studentList);
 
-        Collections.sort(studentList,new NameComparator());
-
         Collections.sort(studentList,(o1,o2) -> {
             return Integer.compare(o1.getRollNo(),o2.getRollNo());
         });

@@ -263,7 +263,7 @@ class Account{
 
 }
 
-class Product{
+ class Product{
     public Product(String productName,String category,double price) {
         this.category = category;
         this.price = price;
