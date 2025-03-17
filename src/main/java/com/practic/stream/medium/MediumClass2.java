@@ -135,7 +135,13 @@ public class MediumClass2 {
                 new EmployeeB("Neha", "Finance"));
 
 
-        employeesb.stream().collect(Collectors.groupingBy(EmployeeB::getDepartment,Collectors.mapping(EmployeeB::getName,Collectors.toList())));
+       // employeesb.stream().collect(Collectors.groupingBy(EmployeeB::getDepartment,Collectors.mapping(EmployeeB::getName,Collectors.toList())));
+
+
+
+
+
+
 
 
 
@@ -173,23 +179,11 @@ enum Gender{
 }
 
 @ToString
+@Getter
+@AllArgsConstructor
 class Employee {
     String name;
     double salary;
-    public double getSalary() {
-        return salary;
-    }
-    public String getName() {
-        return name;
-    }
-
-
-    Employee(String name, double salary) {
-        this.name = name;
-        this.salary = salary;
-    }
-
-
 }
 @Getter
 @AllArgsConstructor
@@ -224,22 +218,12 @@ class EmployeeA {
     private String name;
 }
 
+@AllArgsConstructor
+@Getter
+@ToString
 class Product {
     private String name;
     private double price;
-
-    public Product(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
-
-    public String getName() { return name; }
-    public double getPrice() { return price; }
-
-    @Override
-    public String toString() {
-        return name + " - ₹" + price;
-    }
 }
 
 @AllArgsConstructor
