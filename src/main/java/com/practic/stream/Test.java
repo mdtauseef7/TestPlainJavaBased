@@ -1,16 +1,28 @@
 package com.practic.stream;
 
-public class Test {
-    static void method(Object obj) {
-        System.out.println("Object method");
-    }
+import java.util.ArrayList;
+import java.util.Iterator;
 
-    static void method(String str) {
-        System.out.println("String method");
-    }
+public class Test {
 
     public static void main(String[] args) {
-        method(null); // Which method gets called?
+
+
+        ArrayList<String> list = new ArrayList<>();
+        list.add("jayram");
+        list.add("Vaibhav");
+        list.add("Neeraj");
+        list.add("Abhijeet");
+
+        Iterator<String> iterator = list.iterator();
+
+        while(iterator.hasNext()){
+            String next = iterator.next();
+            if(next == "Vaibhav")
+                list.remove(next);
+        }
+
+        System.out.println(list);
     }
 
 
